@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulum Galaxy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/Triangulum.jpg'); /* Use your background image here */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+            max-width: 800px;
+            line-height: 1.7;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .content-section {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            flex-basis: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.2em;
+        }
+
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.2); /* Translucent white background */
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            margin-top: 40px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-section {
+                width: 90%;
+                flex-basis: unset;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            .description {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop>
+        <source src="{{ url_for('static', filename='Tri.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Triangulum Galaxy</h1>
+
+    <div class="description">
+        The Triangulum Galaxy, a.k.a., Messier 33, is a spiral galaxy about 3 million light years from Earth. It belongs to the Local Group of galaxies that includes the Milky Way and Andromeda galaxies. The Triangulum Galaxy, a.k.a., Messier 33, is a spiral galaxy about 3 million light years from Earth.
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Stars</h2>
+            <ul>
+                <li>M33 X-7</li>
+                <li>NGC 604 Stars </li>
+                <li>Wolf-Rayet Stars</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Planets</h2>
+            <ul>
+                As of now, no specific planets within the Triangulum Galaxy 
+
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Dwarf Stars</h2>
+            <ul>
+                As of now, no specific Dwarf Stars within the Triangulum Galaxy 
+            </ul>
+        </div>
+    </div>
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sombrero Galaxy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Style the video to cover the background */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 110%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+            max-width: 800px;
+            line-height: 1.7;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .content-section {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            flex-basis: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.2em;
+        }
+
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.2); /* Translucent white background */
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            margin-top: 40px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-section {
+                width: 90%;
+                flex-basis: unset;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            .description {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop>
+        <source src="{{ url_for('static', filename='4.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Sombrero</h1>
+
+    <div class="description">
+        Looking like a broad-brimmed Mexican hat, the “Sombrero” Galaxy, M104, is a spiral galaxy seen nearly edge-on. The center of M104 is thought to be home to a massive black hole. This stunning Hubble image of M104, also known as the Sombrero Galaxy, is one of the largest mosaics ever assembled from Hubble observations.
+    </div>
+
+    <div class="container">
+        <div class="content-section">
+            <h2>Stars</h2>
+            <ul>
+                The Sombrero Galaxy (M104) doesn’t have specifically named stars due to its distance of about 31 million light-years. However, it contains an unusually large number of globular clusters—around 2,000—filled with older stars, making it a key focus for studying star clusters. The galaxy’s halo and bright central bulge host older stars, while younger, hot stars line the disk, creating its famous bright edge.
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Planets</h2>
+            <ul>
+                As of now, no specific planets within the Sombrero Galaxy.
+
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h2>Dwarf Stars</h2>
+            <ul>
+                As of now, no specific Dwarf Stars within the Sombrerol Galaxy.
+            </ul>
+        </div>
+    </div>
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+
+</body>
+</html>

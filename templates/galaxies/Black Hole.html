@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Black Hole</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        /* Style the video to cover the background */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+
+        h1 {
+            font-size: 4.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.8);
+            max-width: 800px;
+            line-height: 1.7;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: flex-start;
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .content-section {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px;
+            flex-basis: 30%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+            font-weight: bold;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.2em;
+        }
+
+        ul li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.2); /* Translucent white background */
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        ul li:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 255, 255, 0.4);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            margin-top: 40px;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        /* Styling for the YouTube link button */
+        .link-button {
+            background-color: #ff0000; /* YouTube red */
+            padding: 15px 30px;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            margin: 20px;
+            display: inline-block;
+        }
+
+        .link-button:hover {
+            background-color: #cc0000;
+        }
+
+        /* Make the layout responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .content-section {
+                width: 90%;
+                flex-basis: unset;
+            }
+
+            h1 {
+                font-size: 3em;
+            }
+
+            .description {
+                font-size: 1.2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Video -->
+    <video autoplay muted loop>
+        <source src="{{ url_for('static', filename='Black hole.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <h1>Black Holes</h1>
+
+    <div class="description">
+        The idea of black holes was first proposed by John Michell, an English clergyman and astronomical pioneer, in 1783. Michell's calculations suggested that a star with a diameter 500 times larger than the Sun and a surface escape velocity faster than light would form a black hole. He also noted that these massive, non-radiating bodies could be detected by their gravitational effects on nearby objects.
+    </div>
+
+    <div class="container">
+        <ul>Cygnus X-1</ul>
+        <ul>M87</ul>
+        <ul>Sagittarius A</ul>
+    </div>
+    
+    <!-- YouTube link as a button -->
+    <a href="https://youtu.be/E3mC4Y_WYvA?si=48I265Fi3cnlYtH9" class="link-button" target="_blank">Watch Video on YouTube</a>
+
+    <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+
+</body>
+</html>
