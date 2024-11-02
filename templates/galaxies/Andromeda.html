@@ -26,7 +26,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 110%;
             object-fit: cover;
             z-index: -1;
         }
@@ -126,6 +126,12 @@
             }
         }
     </style>
+    <script>
+        function showPremiumPrompt(event) {
+            event.preventDefault(); // Prevent default anchor action
+            alert("This feature requires a premium account. Please upgrade your account to access the PDF.");
+        }
+    </script>
 </head>
 <body>
 
@@ -172,6 +178,7 @@
         </div>
     </div>
 
+    <a class="read-more" href="{{ url_for('static', filename='A.pdf') }}" target="_blank">Read More</a>
     <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
 
 </body>
