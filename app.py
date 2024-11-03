@@ -91,6 +91,7 @@ def galaxy_detail(galaxy_name):
         return render_template(f'galaxies/{galaxy_name}.html', galaxy_name=galaxy_name)
     except:
         return "Galaxy not found", 404
+
 if __name__ == '__main__':
     # Create database if it doesn't exist
     conn = sqlite3.connect('users.db')
@@ -102,4 +103,4 @@ if __name__ == '__main__':
                     )''')
     conn.close()
     
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8000, debug=True)
